@@ -26,3 +26,25 @@ Un sistema que conecta las compras con el marketing para proteger el margen de c
 4. **Recomendaciones para Marketing:** un agente de IA avisa al equipo de Marketing cuando un plato pierde margen y propone qué platos promocionar en la app o en las campañas según su rentabilidad actual.
 
 Elegí este reto porque une los dos departamentos que más me interesan, abarca varios hitos del curso (Backend, Workflows, RAG y Agentes) y resuelve un problema que tienen todos los restaurantes, por lo que también podría ofrecérselo a mis clientes del sector.
+
+## My AI Agent Idea
+
+### Qué haría el agente
+
+Un **agente de márgenes** que vigila los precios de los proveedores y protege la rentabilidad del menú. Cada vez que llega una factura, la lee, detecta qué productos han cambiado de precio, calcula cómo afecta eso al coste de cada plato y decide a quién avisar y qué recomendar: a Compras, para renegociar o buscar otro proveedor, y a Marketing, para cambiar qué platos se promocionan.
+
+### Qué información necesita
+
+- **Facturas de los ~20 proveedores** de Colombia y Florida, en PDF o por email.
+- **Historial de precios** de cada materia prima por proveedor y por mercado (lo va construyendo el propio sistema).
+- **Recetas del menú** con los ingredientes y las cantidades de cada plato.
+- **Precios de venta** de cada plato en COP y en USD.
+- **Ventas por plato y por local**, para saber qué platos pesan más en la facturación.
+- **Tipo de cambio COP/USD**, para comparar los dos mercados.
+
+### Qué produciría o activaría
+
+- **Alerta a Compras** cuando un producto sube más de un umbral (por ejemplo, un 8 %), con el proveedor, la subida y los platos afectados.
+- **Informe de margen por plato**, que muestra qué platos han perdido rentabilidad en cada país.
+- **Recomendación a Marketing** de qué platos promocionar en la app o en las campañas y cuáles dejar de destacar.
+- **Resumen semanal** con las subidas de precio, el impacto en el margen de la cadena y los proveedores con los que conviene negociar de forma centralizada.
