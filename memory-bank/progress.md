@@ -47,3 +47,4 @@
 - **Umbral de alerta de precios:** el 8 % es solo un ejemplo; está sin decidir.
 - **Seguridad:** `.gitignore` vacío y sin gitleaks; se configura antes de la primera clave.
 - **Stack de `uis/backoffice`:** sin decidir.
+- **Nota mínima de PageSpeed:** confirmar en el enunciado del hito de Web.

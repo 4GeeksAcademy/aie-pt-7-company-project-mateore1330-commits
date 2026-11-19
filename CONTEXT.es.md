@@ -39,8 +39,9 @@ Los nombres de entidad y de campo van en inglés y en `snake_case`. Los campos d
 | `invoice` | Una factura de un proveedor (PDF o email) | `id`, `supplier_id`, `market`, `currency`, `issued_at`, `total` |
 | `invoice_line` | Una línea de factura | `invoice_id`, `product_id`, `quantity`, `unit`, `unit_price` |
 | `price_record` | Un precio de un producto en una fecha; forma el historial de precios | `product_id`, `supplier_id`, `market`, `currency`, `unit_price`, `recorded_at` |
-| `dish` | Un plato del menú | `id`, `name_es`, `name_en`, `market`, `sale_price`, `currency` |
-| `recipe` | Los ingredientes y las cantidades de un plato | `dish_id`, `product_id`, `quantity`, `unit` |
+| `dish` | Un plato del menú, **común a los dos mercados** | `id`, `name_es`, `name_en` |
+| `dish_price` | El precio de venta de un plato en un mercado | `dish_id`, `market`, `sale_price`, `currency` |
+| `recipe` | Los ingredientes y las cantidades de un plato, **iguales en todos los locales** | `dish_id`, `product_id`, `quantity`, `unit` |
 | `sale` | Una venta registrada en un local | `id`, `location_id`, `market`, `currency`, `total`, `sold_at` |
 | `customer` | Un cliente (hoy no hay datos; llegarán con la app de fidelización) | `id`, `market`, `language` |
 | `exchange_rate` | Un tipo de cambio entre COP y USD en una fecha | `from_currency`, `to_currency`, `rate`, `date` |
@@ -50,9 +51,12 @@ productos de limpieza.
 
 ### Conceptos derivados
 
-- **Coste de un plato:** suma de `quantity × unit_price` de los productos de su `recipe`, con el precio más
-  reciente del mercado del plato.
-- **Margen de un plato:** `sale_price` menos su coste, en la moneda del plato.
+- **Coste de un plato en un mercado:** suma de `quantity × unit_price` de los productos de su `recipe`,
+  usando el `price_record` **más reciente** de cada producto **en ese mercado**. Nunca se mezclan precios de
+  `CO` y `US-FL`. Como la receta es la misma pero los proveedores no, un plato tiene un coste distinto en
+  cada mercado.
+- **Margen de un plato en un mercado:** `sale_price` de su `dish_price` en ese mercado menos su coste en ese
+  mercado, en la moneda del mercado.
 - **Alerta de precio:** se genera cuando el `unit_price` de un producto sube más de un umbral respecto al
   anterior `price_record`. **El umbral está sin decidir** (el ejemplo de partida es un 8 %).
 - **Brasa Points:** el programa de fidelización actual, con tarjetas físicas de sellos.

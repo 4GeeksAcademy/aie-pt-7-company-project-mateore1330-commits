@@ -78,13 +78,17 @@ Se construye casi desde cero.
 | 2026-11-19 | Documentación en español; nombres de archivo y de campo en inglés | Reglas globales de Mateo |
 | 2026-11-19 | `CLAUDE.md` contiene solo `@AGENTS.md` | Claude Code no lee `AGENTS.md` por sí solo |
 | 2026-11-19 | `.gitignore`, `.env.example` y gitleaks se dejan para cuando aparezcan claves | No los pide el hito actual |
+| 2026-11-19 | Los campos de las entidades de `CONTEXT.es.md` son una propuesta inicial; se fijan en el hito de Backend | Dar al agente una base coherente desde el principio |
+| 2026-11-19 | Menú común: un `dish` y una `recipe` para los dos mercados, con un `dish_price` por mercado | El briefing exige que la comida sea igual en todos los locales; el precio sí cambia por país |
+| 2026-11-19 | El coste de un plato usa el precio más reciente de cada producto en el mercado del plato | Las subidas se reflejan en el margen en cuanto llega la factura, que es lo que busca el agente de márgenes |
 
 ---
 
 ## 6. Riesgos técnicos
 
-- **Tailwind por CDN y PageSpeed:** el hito de Web pide una nota de PageSpeed de 80 o más. Cargar Tailwind
-  por CDN puede bajarla; si pasa, habrá que generar el CSS con la CLI de Tailwind.
+- **Tailwind por CDN y PageSpeed:** cargar Tailwind por CDN puede bajar la nota de PageSpeed; si pasa, habrá
+  que generar el CSS con la CLI de Tailwind. **Pendiente de confirmar** en el enunciado del hito de Web si
+  se exige una nota mínima (el plan apunta a 80 o más, pero no está verificado).
 - **`uis/website` es revisable:** si un hito posterior pide Next.js, habrá que migrar la web.
 - **Sin seguridad configurada todavía:** el `.gitignore` está vacío y no hay hook de gitleaks. Hay que
   configurarlos antes de añadir la primera clave.
