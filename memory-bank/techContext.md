@@ -80,6 +80,7 @@ Se construye casi desde cero.
 | 2026-11-19 | `.gitignore`, `.env.example` y gitleaks se dejan para cuando aparezcan claves | No los pide el hito actual |
 | 2026-11-19 | Los campos de las entidades de `CONTEXT.es.md` son una propuesta inicial; se fijan en el hito de Backend | Dar al agente una base coherente desde el principio |
 | 2026-11-19 | Menú común: un `dish` y una `recipe` para los dos mercados, con un `dish_price` por mercado | El briefing exige que la comida sea igual en todos los locales; el precio sí cambia por país |
+| 2026-11-19 | Las reglas de `.agents/rules/` declaran su alcance en el frontmatter (`alwaysApply`, `globs` o `description`) y en una línea «Alcance:» | El formato del frontmatter lo entienden los agentes (Cursor y otros), y la línea «Alcance:» se lee aunque la herramienta no lo procese |
 | 2026-11-19 | El coste de un plato usa el precio más reciente de cada producto en el mercado del plato | Las subidas se reflejan en el margen en cuanto llega la factura, que es lo que busca el agente de márgenes |
 
 ---

@@ -10,11 +10,22 @@
 - **Hito en curso:** Ingeniería impulsada por IA
   ([plan](../docs/plans/01-hito-ingenieria-impulsada-por-ia.md)).
 - **Rama:** `feat/AGENTS-01-agent-memory-bank`.
-- **Fase:** 1 de 5 — banco de memoria y contexto del dominio.
+- **Fase:** 4 de 5 — validación terminada; falta la entrega (PR a `develop`).
 
 ---
 
 ## Historial
+
+### 2026-11-19 · `feat/AGENTS-01-agent-memory-bank` (fases 2 a 4)
+
+- Creados `AGENTS.md` (lectura inicial, flujo de 7 pasos antes del commit, archivos protegidos y cuándo
+  parar y preguntar) y `CLAUDE.md` (`@AGENTS.md`).
+- Creadas las 4 reglas de `.agents/rules/`: `monorepo-structure` (siempre activa), `brasaland-domain` y
+  `fastapi-services` (por patrón) y `git-workflow` (bajo demanda).
+- Creada la skill `.agents/skills/update-memory-bank/SKILL.md`.
+- Validado el flujo de `AGENTS.md` sobre la rama: formato de rama correcto, archivos en su sitio, sin
+  carpetas de app nuevas, sin `.env` ni secretos (gitleaks sin hallazgos). No hay tests ni lint todavía.
+- Primera ejecución real de la skill `update-memory-bank` (esta entrada).
 
 ### 2026-11-19 · `feat/AGENTS-01-agent-memory-bank`
 
@@ -31,12 +42,9 @@
 
 ## Próximos pasos
 
-1. **Fase 2:** `AGENTS.md` (lectura inicial, flujo de 7 pasos antes del commit, archivos protegidos) y
-   `CLAUDE.md`.
-2. **Fase 3:** las 4 reglas de `.agents/rules/` y la skill `.agents/skills/update-memory-bank/`.
-3. **Fase 4:** validar el flujo y la skill sobre este propio hito.
-4. **Fase 5:** PR a `develop` y entrega del enlace en el campus.
-5. **Hitos siguientes:** Web (`uis/website`), y después Backend, Workflows, RAG y Agentes.
+1. **Fase 5:** subir la rama, abrir el PR a `develop` con un enlace a `AGENTS.md` y entregar la URL en el
+   campus. Mateo fusiona cuando el profesor lo apruebe.
+2. **Hitos siguientes:** Web (`uis/website`), y después Backend, Workflows, RAG y Agentes.
 
 ---
 
@@ -48,3 +56,4 @@
 - **Seguridad:** `.gitignore` vacío y sin gitleaks; se configura antes de la primera clave.
 - **Stack de `uis/backoffice`:** sin decidir.
 - **Nota mínima de PageSpeed:** confirmar en el enunciado del hito de Web.
+- **Sin tests ni lint:** el paso 3 del flujo de `AGENTS.md` no tiene nada que ejecutar hasta que haya código.
